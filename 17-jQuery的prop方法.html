@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>17-jQuery的prop方法</title>
+    <script src="code/js/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            /*
+            * 1.prop方法
+            *   特点和attr方法一致
+            *
+            * 2.removeProp方法
+            *   特点和removeAttr方法一致
+            * */
+            /*
+            $("span").eq(0).prop("demo","sky666");
+            $("span").eq(1).prop("demo","sky000");
+            console.log($("span").prop("demo"));
+
+            $("span").removeProp("demo");
+            */
+
+            /*
+            注意点:
+            prop方法不仅能够操作属性,还能操作属性节点
+            */
+            console.log($("span").prop("class")); //span1
+            $("span").prop("class","box");
+        })
+    </script>
+</head>
+<body>
+<span class="span1" name="ciweiyu666"></span>
+<span class="span2" name="chiyu"></span>
+</body>
+</html>
