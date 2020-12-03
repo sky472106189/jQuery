@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>24-jQuery事件绑定</title>
+    <script src="code/js/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            //编写jQuery代码
+            /*
+            jQuery有两种绑定事件的方式
+            1.evenName(fn);  推荐
+            部分时间jQuery没有实现,所以不能添加
+            2.on(eventName,fn);
+            所有js事件都可以添加
+
+            注意点:
+            可以添加多个相同或者不同类型的时间,不会覆盖
+            */
+            $("button").click(function () {
+                alert("被点击了");
+            });
+            $("button").mouseleave(function () {
+                alert("鼠标移出")
+            });
+            $("button").mouseenter(function () {
+                alert("鼠标移入")
+            })
+            $("button").on("click",function () {
+                alert("被点击了on")
+            })
+        })
+    </script>
+</head>
+<body>
+<button>我是按钮</button>
+</body>
+</html>
