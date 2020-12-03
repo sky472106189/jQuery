@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>36-TAB选项卡 上</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 440px;
+            height: 298px;
+            border: 1px solid #000;
+            margin: 50px auto;
+        }
+        .nav>li{
+            width: 110px;
+            height: 50px;
+            background-color: orange;
+            text-align: center;
+            line-height: 50px;
+            float: left;
+        }
+        .nav>.current{
+            background-color: #ccc;
+        }
+        ul>li{
+            list-style: none;
+        }
+        .content>li{
+            display: none;
+        }
+        .content>.show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul class="nav">
+        <li class="current">H5+C3</li>
+        <li>jQuery</li>
+        <li>C语言</li>
+        <li>Go语言</li>
+    </ul>
+    <ul class="content">
+        <li class="show"><img src="code/images/timg.jpg"/></li>
+        <li><img src="code/images/timg (1).jpg"/></li>
+        <li><img src="code/images/timg (2).jpg"/></li>
+        <li><img src="code/images/timg (3).jpg"/></li>
+    </ul>
+</div>
+</body>
+</html>

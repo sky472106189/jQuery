@@ -42,8 +42,27 @@
             triggerHandler:此方法会阻止事件冒泡
             */
             // $(".son").trigger("click");
-            $(".son").triggerHandler("click");
+            // $(".son").triggerHandler("click");
 
+            $("input[type='submit']").click(function () {
+                alert("submit");
+            })
+            /*
+            trigger: 会触发默认行为
+            triggerHandler: 不会触发默认行为
+            */
+            // $("input[type='submit']").trigger("click"); //触发后跳转到淘宝首页
+            // $("input[type='submit']").triggerHandler("click"); //触发后不会跳转到淘宝首页
+
+            //注意 a标签是不会自动触发 跳转网页的,需要在a标签内选中才行
+            $("a").click(function () {
+                alert("a");
+            })
+            //比如 这样就能自动触发a标签事件
+            $("span").click(function () {
+                alert("span");
+            })
+            $("span").trigger("click");
         })
     </script>
 </head>
@@ -51,7 +70,7 @@
 <div class="father">
     <div class="son"></div>
 </div>
-<a href="http://www.baidu.com">百度</a>
+<a href="http://www.baidu.com"><span>百度</span></a>
 <form action="http://www.taobao.com">
     <input type="text">
     <input type="submit">
