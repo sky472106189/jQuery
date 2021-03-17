@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01-jQuery的基本结构</title>
+    <script>
+        /*
+        1.jQuery本质是一个闭包
+        2.jQuery为什么要使用闭包来实现?
+            为了避免多个框架的冲突
+        3.jQuery如何外界访问内部定义的局部变量
+            通过window.xxx = xxx;
+        4.jQuery为什么要给自己传递一个window参数
+            4.1 为了方便后期压缩代码
+            4.2 为了提升查找的效率
+        5.jQuery为什么要给自己接受一个undefined参数
+            5.1 方便后期压缩代码
+            5.2 IE9以下的浏览器undefined可以被修改,为了保证内部使用的undefined不被修改
+            所以需要接受一个正确的undefined
+        */
+
+        (function( window, undefined ) {
+            var jQuery = function () {
+                return new jQuery.prototype.init();
+            }
+            jQuery.prototype = {
+                constructor: jQuery
+            }
+            jQuery.prototype.init.prototype = jQuery.prototype;
+            window.jQuery = window.$ = jQuery;
+        })( window );
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>47-jQuery自定义动画</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+            background-color: red;
+        }
+        .two{
+            background-color: blue;
+        }
+    </style>
+    <script src="../resource/js/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            $("button").eq(0).click(function () {
+                // $(".one").animate({
+                //     width:500
+                // },1000,function () {
+                //     alert("自定义动画执行完毕");
+                // });
+                $(".one").animate({
+                    marginLeft:500
+                },3000,function () {
+                });
+                $(".two").animate({
+                    marginLeft:500
+                },3000,"linear",function () {
+                });
+                /*
+                animate(params,[speed],[easing],[fn])
+                第一个参数params:接受一个对象,可以在对象中修改属性
+                第二个参数speed:指定东华市场
+                第三个参数easing:指定动画节奏,默认是swing
+                第四个参数fn:动画执行完毕之后的回调函数
+                */
+            });
+            $("button").eq(1).click(function () {
+                $(".one").animate({
+                    width:"+=100"
+                },1000,function () {
+                    alert("累加属性执行完毕");
+                });
+            });
+            $("button").eq(2).click(function () {
+                $(".one").animate({
+                    // width:"hide",
+                    width:"toggle"
+                },1000,function () {
+                    alert("关键字执行完毕");
+                });
+            });
+        })
+    </script>
+</head>
+<body>
+<button>操作属性</button>
+<button>累加属性</button>
+<button>关键字</button>
+<div class="one"></div>
+<div class="two"></div>
+</body>
+</html>
